@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/benchmarks/">
     <Project Path="benchmarks/Redis.Client.Benchmarks/Redis.Client.Benchmarks.csproj" />
+    <Project Path="benchmarks/Redis.Client.Comparison/Redis.Client.Comparison.csproj" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/Redis.Client/Redis.Client.csproj" />

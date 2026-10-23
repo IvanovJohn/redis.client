@@ -1,0 +1,19 @@
+# Redis behind toxiproxy: clients connect to the proxy (127.0.0.1:26379), the harness injects network faults
+# through the toxiproxy API (127.0.0.1:8474). Direct access (127.0.0.1:6390) is used for the no-latency baseline.
+name: redis-client-comparison
+
+services:
+  redis:
+    image: ${REDIS_IMAGE:-redis:7.4-alpine}
+    container_name: cmp-redis
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    ports:
+      - "127.0.0.1:6390:6379"
+
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy:2.12.0
+    container_name: cmp-toxiproxy
+    depends_on: [redis]
+    ports:
+      - "127.0.0.1:8474:8474"
+      - "127.0.0.1:26379:26379"
