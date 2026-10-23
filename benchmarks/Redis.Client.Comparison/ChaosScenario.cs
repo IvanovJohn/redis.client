@@ -4,7 +4,7 @@ using System.Text.Json.Nodes;
 
 namespace Redis.Client.Comparison;
 
-internal sealed record ChaosPhase(string Name, TimeSpan FaultDuration, Func<Toxiproxy, Task> Inject, Func<Toxiproxy, Task> Heal);
+internal sealed record ChaosPhase(string Id, string Name, TimeSpan FaultDuration, Func<Toxiproxy, Task> Inject, Func<Toxiproxy, Task> Heal);
 
 internal sealed record PhaseOutcome(
     string Phase,
@@ -30,22 +30,22 @@ internal sealed class ChaosScenario(IReadOnlyList<IClientAdapter> clients, Toxip
 
     public static IReadOnlyList<ChaosPhase> DefaultPhases(TimeSpan fault) =>
     [
-        new("Обрыв соединений (TCP RST)", TimeSpan.FromSeconds(1),
+        new("rst", "Обрыв соединений (TCP RST)", TimeSpan.FromSeconds(1),
             p => p.AddToxicAsync("rst", "reset_peer", new JsonObject { ["timeout"] = 0 }),
             p => p.RemoveToxicAsync("rst")),
-        new($"Redis недоступен {fault.TotalSeconds:0} с", fault,
+        new("down", $"Redis недоступен {fault.TotalSeconds:0} с", fault,
             p => p.SetEnabledAsync(false),
             p => p.SetEnabledAsync(true)),
-        new($"Сеть замерла на {fault.TotalSeconds:0} с (ответы не приходят, соединение не рвётся)", fault,
+        new("freeze", $"Сеть замерла на {fault.TotalSeconds:0} с (ответы не приходят, соединение не рвётся)", fault,
             p => p.AddToxicAsync("blackhole", "timeout", new JsonObject { ["timeout"] = 0 }),
             p => p.RemoveToxicAsync("blackhole")),
-        new($"Задержка ответов +3 с в течение {fault.TotalSeconds:0} с", fault,
+        new("slow", $"Задержка ответов +3 с в течение {fault.TotalSeconds:0} с", fault,
             p => p.AddToxicAsync("slow", "latency", new JsonObject { ["latency"] = 3000, ["jitter"] = 0 }),
             p => p.RemoveToxicAsync("slow")),
-        new($"Ответы приходят по 1 байту {fault.TotalSeconds:0} с", fault,
+        new("slicer", $"Ответы приходят по 1 байту {fault.TotalSeconds:0} с", fault,
             p => p.AddToxicAsync("slicer", "slicer", new JsonObject { ["average_size"] = 1, ["size_variation"] = 0, ["delay"] = 0 }),
             p => p.RemoveToxicAsync("slicer")),
-        new("Перезапуск Redis", TimeSpan.Zero,
+        new("restart", "Перезапуск Redis", TimeSpan.Zero,
             _ => Toxiproxy.DockerAsync("restart", "cmp-redis"),
             _ => Task.CompletedTask),
     ];

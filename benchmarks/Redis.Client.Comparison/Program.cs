@@ -5,11 +5,13 @@ using System.Text;
 using System.Text.Json.Nodes;
 using Redis.Client.Comparison;
 
-// Usage: dotnet run -c Release -- [perf|chaos|all] [--quick]
+// Usage: dotnet run -c Release -- [perf|chaos|all] [--quick] [--only rst,down,freeze,slow,slicer,restart]
 // Requires `docker compose up -d` in this directory (redis + toxiproxy).
 CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
-var mode = args.FirstOrDefault(a => !a.StartsWith("--", StringComparison.Ordinal)) ?? "all";
+var mode = args.FirstOrDefault(a => a is "perf" or "chaos" or "all") ?? "all";
 var quick = args.Contains("--quick");
+var onlyIndex = Array.IndexOf(args, "--only");
+var onlyPhases = onlyIndex >= 0 && onlyIndex + 1 < args.Length ? args[onlyIndex + 1].Split(',') : null;
 
 var direct = IPEndPoint.Parse("127.0.0.1:6390");
 var proxied = IPEndPoint.Parse("127.0.0.1:26379");
@@ -139,7 +141,8 @@ async Task RunChaosAsync()
 
     Console.WriteLine("chaos:");
     var scenario = new ChaosScenario([ours, theirs], proxy, Workers, calm);
-    var (outcomes, timeline) = await scenario.RunAsync(ChaosScenario.DefaultPhases(fault), baseline: TimeSpan.FromSeconds(5));
+    var (outcomes, timeline) = await scenario.RunAsync(
+        [.. ChaosScenario.DefaultPhases(fault).Where(p => onlyPhases is null || onlyPhases.Contains(p.Id))], baseline: TimeSpan.FromSeconds(5));
     await File.WriteAllTextAsync(Path.Combine(outputDirectory, $"chaos-timeline-{stamp}.csv"), timeline);
 
     report.AppendLine("## Поведение при сбоях")
