@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Redis.Client</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <IsAotCompatible>true</IsAotCompatible>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>Async-first Redis client for .NET written from scratch on top of RESP2/RESP3: multiplexing, TLS, ACL, transactions, Lua scripts, Pub/Sub and OpenTelemetry-ready diagnostics.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionSuffix>preview.1</VersionSuffix>
+  </PropertyGroup>
+
+  <!--
+    Public API is tracked in PublicAPI.*.txt. In local Debug builds missing entries are warnings
+    so the API can evolve; in Release/CI they fail the build.
+  -->
+  <!--
+    RS0026/RS0027 forbid several overloads with optional parameters. Every command method intentionally ends with
+    "CancellationToken cancellationToken = default", so overloads (single key vs. many keys) all have one. Shipped
+    overloads are still protected by RS0016/RS0017: adding a parameter to them shows up as an API change in review.
+  -->
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);RS0026;RS0027</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug' and '$(ContinuousIntegrationBuild)' != 'true'">
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);RS0016;RS0017;RS0026;RS0027;RS0036;RS0037</WarningsNotAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" Condition="Exists('../../README.md')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Redis.Client.Tests" />
+    <InternalsVisibleTo Include="Redis.Client.IntegrationTests" />
+    <InternalsVisibleTo Include="Redis.Client.Benchmarks" />
+  </ItemGroup>
+
+</Project>

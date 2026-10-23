@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/Redis.Client.Benchmarks/Redis.Client.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Redis.Client/Redis.Client.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Redis.Client.AotSmoke/Redis.Client.AotSmoke.csproj" />
+    <Project Path="tests/Redis.Client.IntegrationTests/Redis.Client.IntegrationTests.csproj" />
+    <Project Path="tests/Redis.Client.Tests/Redis.Client.Tests.csproj" />
+  </Folder>
+</Solution>

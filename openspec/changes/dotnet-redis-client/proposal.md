@@ -45,7 +45,7 @@
 ## Impact
 
 - **Код:** новый solution с нуля: библиотека клиента, unit-тесты и интеграционные тесты.
-- **Зависимости:** `System.IO.Pipelines`, `Microsoft.Extensions.Logging.Abstractions`, `Microsoft.Extensions.Options`, `Microsoft.Extensions.DependencyInjection.Abstractions`. Других runtime-зависимостей нет.
+- **Зависимости:** `Microsoft.Extensions.Logging.Abstractions`, `Microsoft.Extensions.Options`, `Microsoft.Extensions.Configuration.Abstractions` (привязка к `IConfiguration` без reflection, совместимая с NativeAOT), `Microsoft.Extensions.DependencyInjection.Abstractions`. `System.IO.Pipelines` входит в shared framework .NET 10, поэтому отдельный пакет не нужен. Других runtime-зависимостей нет.
 - **Совместимость с сервером:** минимальная поддерживаемая версия — Redis 6.2.
 - **Тестовая инфраструктура:** интеграционным тестам нужен настоящий Redis (через Testcontainers или docker-compose), включая конфигурации с TLS и ACL.
 - **Публичный API:** новый контракт, после первого релиза к нему применяется SemVer.

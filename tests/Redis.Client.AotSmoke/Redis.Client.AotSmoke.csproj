@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Published with -p:PublishAot=true in CI: fails if the library is not trim/AOT safe. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <PublishAot>true</PublishAot>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Redis.Client/Redis.Client.csproj" />
+    <TrimmerRootAssembly Include="Redis.Client" />
+  </ItemGroup>
+
+</Project>

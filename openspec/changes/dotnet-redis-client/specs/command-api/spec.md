@@ -146,3 +146,15 @@
 #### Scenario: Ошибка в произвольной команде
 - **WHEN** вызывается `ExecuteAsync("NOSUCHCOMMAND", [])`
 - **THEN** вызов завершается `RedisServerException` с кодом `ERR`
+
+### Requirement: Команды, меняющие состояние соединения
+`ExecuteAsync` MUST отклонять команды, которые меняют состояние соединения и поэтому повлияли бы на всех вызывающих, разделяющих мультиплексированное соединение:
+- `SELECT`, `MULTI`, `EXEC`, `DISCARD`, `WATCH`, `UNWATCH`;
+- `SUBSCRIBE` и прочие команды подписки;
+- `HELLO`, `AUTH`, `RESET`, `QUIT`, `MONITOR`, `CLIENT REPLY`.
+
+Вызов SHALL завершаться `NotSupportedException` с указанием API, которое нужно использовать вместо команды. Команда MUST NOT отправляться на сервер.
+
+#### Scenario: SELECT через ExecuteAsync
+- **WHEN** вызывается `ExecuteAsync("SELECT", ["2"])`
+- **THEN** выбрасывается `NotSupportedException`, а база данных соединения не меняется

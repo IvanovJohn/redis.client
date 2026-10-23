@@ -1,0 +1,473 @@
+#nullable enable
+const Redis.Client.RedisClientOptions.DefaultPort = 6379 -> int
+Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions
+override Redis.Client.LexBound.Equals(object? obj) -> bool
+override Redis.Client.LexBound.GetHashCode() -> int
+override Redis.Client.LexBound.ToString() -> string!
+override Redis.Client.LuaScript.ToString() -> string!
+override Redis.Client.RedisClientOptions.ToString() -> string!
+override Redis.Client.RedisCredentials.ToString() -> string!
+override Redis.Client.RedisKey.Equals(object? obj) -> bool
+override Redis.Client.RedisKey.GetHashCode() -> int
+override Redis.Client.RedisKey.ToString() -> string!
+override Redis.Client.RedisMessage.GetHashCode() -> int
+override Redis.Client.RedisResult.ToString() -> string!
+override Redis.Client.RedisValue.Equals(object? obj) -> bool
+override Redis.Client.RedisValue.GetHashCode() -> int
+override Redis.Client.RedisValue.ToString() -> string!
+override Redis.Client.ScoreBound.Equals(object? obj) -> bool
+override Redis.Client.ScoreBound.GetHashCode() -> int
+override Redis.Client.ScoreBound.ToString() -> string!
+override Redis.Client.SortedSetEntry.GetHashCode() -> int
+override Redis.Client.TimeToLive.GetHashCode() -> int
+override Redis.Client.TimeToLive.ToString() -> string!
+Redis.Client.Aggregate
+Redis.Client.Aggregate.Max = 2 -> Redis.Client.Aggregate
+Redis.Client.Aggregate.Min = 1 -> Redis.Client.Aggregate
+Redis.Client.Aggregate.Sum = 0 -> Redis.Client.Aggregate
+Redis.Client.BacklogPolicy
+Redis.Client.BacklogPolicy.FailFast = 1 -> Redis.Client.BacklogPolicy
+Redis.Client.BacklogPolicy.Queue = 0 -> Redis.Client.BacklogPolicy
+Redis.Client.IHashCommands
+Redis.Client.IHashCommands.DeleteAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IHashCommands.DeleteAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! fields, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IHashCommands.ExistsAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IHashCommands.GetAllAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<System.Collections.Generic.KeyValuePair<Redis.Client.RedisValue, Redis.Client.RedisValue>[]!>
+Redis.Client.IHashCommands.GetAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IHashCommands.GetAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! fields, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IHashCommands.IncrementAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, double value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<double>
+Redis.Client.IHashCommands.IncrementAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, long value = 1, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IHashCommands.KeysAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IHashCommands.LengthAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IHashCommands.RandomFieldAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IHashCommands.RandomFieldsAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IHashCommands.RandomFieldsWithValuesAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<System.Collections.Generic.KeyValuePair<Redis.Client.RedisValue, Redis.Client.RedisValue>[]!>
+Redis.Client.IHashCommands.ScanAsync(Redis.Client.RedisKey key, string? pattern = null, int? pageSize = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<System.Collections.Generic.KeyValuePair<Redis.Client.RedisValue, Redis.Client.RedisValue>>!
+Redis.Client.IHashCommands.SetAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, Redis.Client.RedisValue value, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IHashCommands.SetAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<(Redis.Client.RedisValue Field, Redis.Client.RedisValue Value)>! fields, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IHashCommands.StringLengthAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue field, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IHashCommands.ValuesAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IKeyCommands
+Redis.Client.IKeyCommands.CopyAsync(Redis.Client.RedisKey source, Redis.Client.RedisKey destination, bool replace = false, int? destinationDatabase = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.DeleteAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.DeleteAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IKeyCommands.ExistsAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.ExistsAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IKeyCommands.ExpireAsync(Redis.Client.RedisKey key, System.TimeSpan expiry, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.ExpireAtAsync(Redis.Client.RedisKey key, System.DateTimeOffset expireAt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.PersistAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.RenameAsync(Redis.Client.RedisKey key, Redis.Client.RedisKey newKey, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.ScanAsync(string? pattern = null, int? pageSize = null, Redis.Client.RedisType? type = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<Redis.Client.RedisKey>!
+Redis.Client.IKeyCommands.TimeToLiveAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.TimeToLive>
+Redis.Client.IKeyCommands.TouchAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.TouchAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IKeyCommands.TypeAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisType>
+Redis.Client.IKeyCommands.UnlinkAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IKeyCommands.UnlinkAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands
+Redis.Client.IListCommands.BlockingLeftPopAsync(Redis.Client.RedisKey key, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.BlockingLeftPopAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<(Redis.Client.RedisKey Key, Redis.Client.RedisValue Value)?>
+Redis.Client.IListCommands.BlockingMoveAsync(Redis.Client.RedisKey source, Redis.Client.RedisKey destination, Redis.Client.ListSide from, Redis.Client.ListSide to, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.BlockingRightPopAsync(Redis.Client.RedisKey key, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.BlockingRightPopAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<(Redis.Client.RedisKey Key, Redis.Client.RedisValue Value)?>
+Redis.Client.IListCommands.GetByIndexAsync(Redis.Client.RedisKey key, long index, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.InsertAfterAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue pivot, Redis.Client.RedisValue value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.InsertBeforeAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue pivot, Redis.Client.RedisValue value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.LeftPopAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IListCommands.LeftPopAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.LeftPushAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.LeftPushAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! values, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.LengthAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.MoveAsync(Redis.Client.RedisKey source, Redis.Client.RedisKey destination, Redis.Client.ListSide from, Redis.Client.ListSide to, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.PositionAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue element, long? rank = null, long? maxLength = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long?>
+Redis.Client.IListCommands.PositionsAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue element, long count, long? rank = null, long? maxLength = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long[]!>
+Redis.Client.IListCommands.RangeAsync(Redis.Client.RedisKey key, long start = 0, long stop = -1, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IListCommands.RemoveAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, long count = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.RightPopAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IListCommands.RightPopAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IListCommands.RightPushAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.RightPushAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! values, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IListCommands.SetByIndexAsync(Redis.Client.RedisKey key, long index, Redis.Client.RedisValue value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+Redis.Client.IListCommands.TrimAsync(Redis.Client.RedisKey key, long start, long stop, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+Redis.Client.IRedisClient
+Redis.Client.IRedisClient.BeginWatchedTransactionAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.IRedisWatchedTransaction!>
+Redis.Client.IRedisClient.ConnectAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+Redis.Client.IRedisClient.CreateTransaction() -> Redis.Client.IRedisTransaction!
+Redis.Client.IRedisClient.ScriptEvaluateAsync(Redis.Client.LuaScript! script, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>? keys = null, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>? arguments = null, bool readOnly = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisResult!>
+Redis.Client.IRedisClient.ScriptLoadAsync(Redis.Client.LuaScript! script, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<string!>
+Redis.Client.IRedisClient.Subscriber.get -> Redis.Client.IRedisSubscriber!
+Redis.Client.IRedisCommands
+Redis.Client.IRedisCommands.ExecuteAsync(string! command, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>? arguments = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisResult!>
+Redis.Client.IRedisCommands.Hashes.get -> Redis.Client.IHashCommands!
+Redis.Client.IRedisCommands.Keys.get -> Redis.Client.IKeyCommands!
+Redis.Client.IRedisCommands.Lists.get -> Redis.Client.IListCommands!
+Redis.Client.IRedisCommands.Sets.get -> Redis.Client.ISetCommands!
+Redis.Client.IRedisCommands.SortedSets.get -> Redis.Client.ISortedSetCommands!
+Redis.Client.IRedisCommands.Strings.get -> Redis.Client.IStringCommands!
+Redis.Client.IRedisSubscriber
+Redis.Client.IRedisSubscriber.PublishAsync(string! channel, Redis.Client.RedisValue message, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IRedisSubscriber.SubscribeAsync(string! channel, System.Func<Redis.Client.RedisMessage, System.Threading.CancellationToken, System.Threading.Tasks.ValueTask>! handler, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.IRedisSubscription!>
+Redis.Client.IRedisSubscriber.SubscribeAsync(string! channel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.IRedisSubscription!>
+Redis.Client.IRedisSubscriber.SubscribePatternAsync(string! pattern, System.Func<Redis.Client.RedisMessage, System.Threading.CancellationToken, System.Threading.Tasks.ValueTask>! handler, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.IRedisSubscription!>
+Redis.Client.IRedisSubscriber.SubscribePatternAsync(string! pattern, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.IRedisSubscription!>
+Redis.Client.IRedisSubscription
+Redis.Client.IRedisSubscription.ConnectionLost -> System.EventHandler?
+Redis.Client.IRedisSubscription.ConnectionRestored -> System.EventHandler?
+Redis.Client.IRedisSubscription.DroppedMessages.get -> long
+Redis.Client.IRedisSubscription.IsPattern.get -> bool
+Redis.Client.IRedisSubscription.Messages.get -> System.Threading.Channels.ChannelReader<Redis.Client.RedisMessage>!
+Redis.Client.IRedisSubscription.Name.get -> string!
+Redis.Client.IRedisTransaction
+Redis.Client.IRedisTransaction.ExecuteAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+Redis.Client.IRedisWatchedTransaction
+Redis.Client.IRedisWatchedTransaction.Connection.get -> Redis.Client.IRedisCommands!
+Redis.Client.IRedisWatchedTransaction.ExecuteAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISetCommands
+Redis.Client.ISetCommands.AddAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISetCommands.AddAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! members, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISetCommands.CombineAndStoreAsync(Redis.Client.SetOperation operation, Redis.Client.RedisKey destination, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISetCommands.CombineAsync(Redis.Client.SetOperation operation, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISetCommands.ContainsAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISetCommands.ContainsAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! members, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool[]!>
+Redis.Client.ISetCommands.LengthAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISetCommands.MembersAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISetCommands.MoveAsync(Redis.Client.RedisKey source, Redis.Client.RedisKey destination, Redis.Client.RedisValue member, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISetCommands.PopAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISetCommands.PopAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.ISetCommands.RandomMemberAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.ISetCommands.RandomMembersAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISetCommands.RemoveAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISetCommands.RemoveAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! members, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISetCommands.ScanAsync(Redis.Client.RedisKey key, string? pattern = null, int? pageSize = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<Redis.Client.RedisValue>!
+Redis.Client.ISortedSetCommands
+Redis.Client.ISortedSetCommands.AddAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, double score, Redis.Client.SortedSetWhen when = Redis.Client.SortedSetWhen.Always, bool countChanged = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISortedSetCommands.AddAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.SortedSetEntry>! entries, Redis.Client.SortedSetWhen when = Redis.Client.SortedSetWhen.Always, bool countChanged = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.BlockingPopMaxAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<(Redis.Client.RedisKey Key, Redis.Client.SortedSetEntry Entry)?>
+Redis.Client.ISortedSetCommands.BlockingPopMinAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.TimeSpan timeout, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<(Redis.Client.RedisKey Key, Redis.Client.SortedSetEntry Entry)?>
+Redis.Client.ISortedSetCommands.CombineAndStoreAsync(Redis.Client.SetOperation operation, Redis.Client.RedisKey destination, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Collections.Generic.IReadOnlyList<double>? weights = null, Redis.Client.Aggregate aggregate = Redis.Client.Aggregate.Sum, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.CombineAsync(Redis.Client.SetOperation operation, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Collections.Generic.IReadOnlyList<double>? weights = null, Redis.Client.Aggregate aggregate = Redis.Client.Aggregate.Sum, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISortedSetCommands.CombineWithScoresAsync(Redis.Client.SetOperation operation, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Collections.Generic.IReadOnlyList<double>? weights = null, Redis.Client.Aggregate aggregate = Redis.Client.Aggregate.Sum, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry[]!>
+Redis.Client.ISortedSetCommands.CountAsync(Redis.Client.RedisKey key, Redis.Client.ScoreBound min, Redis.Client.ScoreBound max, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.IncrementAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, double value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<double>
+Redis.Client.ISortedSetCommands.LengthAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.PopMaxAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry[]!>
+Redis.Client.ISortedSetCommands.PopMaxAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry?>
+Redis.Client.ISortedSetCommands.PopMinAsync(Redis.Client.RedisKey key, long count, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry[]!>
+Redis.Client.ISortedSetCommands.PopMinAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry?>
+Redis.Client.ISortedSetCommands.RangeByLexAndStoreAsync(Redis.Client.RedisKey destination, Redis.Client.RedisKey source, Redis.Client.LexBound min, Redis.Client.LexBound max, Redis.Client.Order order = Redis.Client.Order.Ascending, long offset = 0, long? count = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.RangeByLexAsync(Redis.Client.RedisKey key, Redis.Client.LexBound min, Redis.Client.LexBound max, Redis.Client.Order order = Redis.Client.Order.Ascending, long offset = 0, long? count = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISortedSetCommands.RangeByRankAndStoreAsync(Redis.Client.RedisKey destination, Redis.Client.RedisKey source, long start = 0, long stop = -1, Redis.Client.Order order = Redis.Client.Order.Ascending, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.RangeByRankAsync(Redis.Client.RedisKey key, long start = 0, long stop = -1, Redis.Client.Order order = Redis.Client.Order.Ascending, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISortedSetCommands.RangeByRankWithScoresAsync(Redis.Client.RedisKey key, long start = 0, long stop = -1, Redis.Client.Order order = Redis.Client.Order.Ascending, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry[]!>
+Redis.Client.ISortedSetCommands.RangeByScoreAndStoreAsync(Redis.Client.RedisKey destination, Redis.Client.RedisKey source, Redis.Client.ScoreBound min, Redis.Client.ScoreBound max, Redis.Client.Order order = Redis.Client.Order.Ascending, long offset = 0, long? count = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.RangeByScoreAsync(Redis.Client.RedisKey key, Redis.Client.ScoreBound min, Redis.Client.ScoreBound max, Redis.Client.Order order = Redis.Client.Order.Ascending, long offset = 0, long? count = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.ISortedSetCommands.RangeByScoreWithScoresAsync(Redis.Client.RedisKey key, Redis.Client.ScoreBound min, Redis.Client.ScoreBound max, Redis.Client.Order order = Redis.Client.Order.Ascending, long offset = 0, long? count = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.SortedSetEntry[]!>
+Redis.Client.ISortedSetCommands.RankAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, Redis.Client.Order order = Redis.Client.Order.Ascending, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long?>
+Redis.Client.ISortedSetCommands.RemoveAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.ISortedSetCommands.RemoveAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! members, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.RemoveRangeByLexAsync(Redis.Client.RedisKey key, Redis.Client.LexBound min, Redis.Client.LexBound max, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.RemoveRangeByRankAsync(Redis.Client.RedisKey key, long start, long stop, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.RemoveRangeByScoreAsync(Redis.Client.RedisKey key, Redis.Client.ScoreBound min, Redis.Client.ScoreBound max, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.ISortedSetCommands.ScanAsync(Redis.Client.RedisKey key, string? pattern = null, int? pageSize = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<Redis.Client.SortedSetEntry>!
+Redis.Client.ISortedSetCommands.ScoreAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue member, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<double?>
+Redis.Client.ISortedSetCommands.ScoresAsync(Redis.Client.RedisKey key, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>! members, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<double?[]!>
+Redis.Client.IStringCommands
+Redis.Client.IStringCommands.AppendAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IStringCommands.DecrementAsync(Redis.Client.RedisKey key, long value = 1, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IStringCommands.GetAndExpireAsync(Redis.Client.RedisKey key, System.DateTimeOffset expireAt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IStringCommands.GetAndExpireAsync(Redis.Client.RedisKey key, System.TimeSpan? expiry, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IStringCommands.GetAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IStringCommands.GetAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue[]!>
+Redis.Client.IStringCommands.GetDeleteAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IStringCommands.GetRangeAsync(Redis.Client.RedisKey key, long start, long end, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IStringCommands.IncrementAsync(Redis.Client.RedisKey key, double value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<double>
+Redis.Client.IStringCommands.IncrementAsync(Redis.Client.RedisKey key, long value = 1, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IStringCommands.LengthAsync(Redis.Client.RedisKey key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.IStringCommands.SetAndGetAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, System.TimeSpan? expiry = null, Redis.Client.When when = Redis.Client.When.Always, bool keepTtl = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisValue>
+Redis.Client.IStringCommands.SetAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, System.DateTimeOffset expireAt, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IStringCommands.SetAsync(Redis.Client.RedisKey key, Redis.Client.RedisValue value, System.TimeSpan? expiry = null, Redis.Client.When when = Redis.Client.When.Always, bool keepTtl = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IStringCommands.SetAsync(System.Collections.Generic.IReadOnlyList<(Redis.Client.RedisKey Key, Redis.Client.RedisValue Value)>! values, Redis.Client.When when = Redis.Client.When.Always, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<bool>
+Redis.Client.IStringCommands.SetRangeAsync(Redis.Client.RedisKey key, long offset, Redis.Client.RedisValue value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<long>
+Redis.Client.LexBound
+Redis.Client.LexBound.Equals(Redis.Client.LexBound other) -> bool
+Redis.Client.LexBound.LexBound() -> void
+Redis.Client.LexBound.Value.get -> Redis.Client.RedisValue
+Redis.Client.ListSide
+Redis.Client.ListSide.Left = 0 -> Redis.Client.ListSide
+Redis.Client.ListSide.Right = 1 -> Redis.Client.ListSide
+Redis.Client.LuaScript
+Redis.Client.LuaScript.LuaScript(string! source) -> void
+Redis.Client.LuaScript.Sha1.get -> string!
+Redis.Client.LuaScript.Source.get -> string!
+Redis.Client.Order
+Redis.Client.Order.Ascending = 0 -> Redis.Client.Order
+Redis.Client.Order.Descending = 1 -> Redis.Client.Order
+Redis.Client.RedisAuthenticationException
+Redis.Client.RedisAuthenticationException.RedisAuthenticationException() -> void
+Redis.Client.RedisAuthenticationException.RedisAuthenticationException(string! message) -> void
+Redis.Client.RedisAuthenticationException.RedisAuthenticationException(string! message, System.Exception? innerException) -> void
+Redis.Client.RedisClient
+Redis.Client.RedisClient.BeginWatchedTransactionAsync(System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>! keys, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.IRedisWatchedTransaction!>
+Redis.Client.RedisClient.ConnectAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+Redis.Client.RedisClient.CreateTransaction() -> Redis.Client.IRedisTransaction!
+Redis.Client.RedisClient.Dispose() -> void
+Redis.Client.RedisClient.DisposeAsync() -> System.Threading.Tasks.ValueTask
+Redis.Client.RedisClient.ExecuteAsync(string! command, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>? arguments = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisResult!>
+Redis.Client.RedisClient.Hashes.get -> Redis.Client.IHashCommands!
+Redis.Client.RedisClient.Keys.get -> Redis.Client.IKeyCommands!
+Redis.Client.RedisClient.Lists.get -> Redis.Client.IListCommands!
+Redis.Client.RedisClient.RedisClient(Redis.Client.RedisClientOptions! options, Microsoft.Extensions.Logging.ILoggerFactory? loggerFactory = null, System.Diagnostics.Metrics.IMeterFactory? meterFactory = null) -> void
+Redis.Client.RedisClient.RedisClient(string! connectionString) -> void
+Redis.Client.RedisClient.ScriptEvaluateAsync(Redis.Client.LuaScript! script, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisKey>? keys = null, System.Collections.Generic.IReadOnlyList<Redis.Client.RedisValue>? arguments = null, bool readOnly = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<Redis.Client.RedisResult!>
+Redis.Client.RedisClient.ScriptLoadAsync(Redis.Client.LuaScript! script, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<string!>
+Redis.Client.RedisClient.Sets.get -> Redis.Client.ISetCommands!
+Redis.Client.RedisClient.SortedSets.get -> Redis.Client.ISortedSetCommands!
+Redis.Client.RedisClient.Strings.get -> Redis.Client.IStringCommands!
+Redis.Client.RedisClient.Subscriber.get -> Redis.Client.IRedisSubscriber!
+Redis.Client.RedisClientOptions
+Redis.Client.RedisClientOptions.ApplyConnectionString(string! connectionString) -> void
+Redis.Client.RedisClientOptions.BacklogPolicy.get -> Redis.Client.BacklogPolicy
+Redis.Client.RedisClientOptions.BacklogPolicy.set -> void
+Redis.Client.RedisClientOptions.ClientName.get -> string?
+Redis.Client.RedisClientOptions.ClientName.set -> void
+Redis.Client.RedisClientOptions.CommandTimeout.get -> System.TimeSpan
+Redis.Client.RedisClientOptions.CommandTimeout.set -> void
+Redis.Client.RedisClientOptions.ConnectTimeout.get -> System.TimeSpan
+Redis.Client.RedisClientOptions.ConnectTimeout.set -> void
+Redis.Client.RedisClientOptions.CredentialsProvider.get -> System.Func<System.Threading.CancellationToken, System.Threading.Tasks.ValueTask<Redis.Client.RedisCredentials!>>?
+Redis.Client.RedisClientOptions.CredentialsProvider.set -> void
+Redis.Client.RedisClientOptions.Database.get -> int
+Redis.Client.RedisClientOptions.Database.set -> void
+Redis.Client.RedisClientOptions.DedicatedPoolSize.get -> int
+Redis.Client.RedisClientOptions.DedicatedPoolSize.set -> void
+Redis.Client.RedisClientOptions.Endpoints.get -> System.Collections.Generic.IList<System.Net.EndPoint!>!
+Redis.Client.RedisClientOptions.KeepAliveInterval.get -> System.TimeSpan
+Redis.Client.RedisClientOptions.KeepAliveInterval.set -> void
+Redis.Client.RedisClientOptions.MaxBulkLength.get -> long
+Redis.Client.RedisClientOptions.MaxBulkLength.set -> void
+Redis.Client.RedisClientOptions.MaxNestingDepth.get -> int
+Redis.Client.RedisClientOptions.MaxNestingDepth.set -> void
+Redis.Client.RedisClientOptions.MultiplexedConnectionCount.get -> int
+Redis.Client.RedisClientOptions.MultiplexedConnectionCount.set -> void
+Redis.Client.RedisClientOptions.Password.get -> string?
+Redis.Client.RedisClientOptions.Password.set -> void
+Redis.Client.RedisClientOptions.Protocol.get -> Redis.Client.RedisProtocol
+Redis.Client.RedisClientOptions.Protocol.set -> void
+Redis.Client.RedisClientOptions.ReconnectBaseDelay.get -> System.TimeSpan
+Redis.Client.RedisClientOptions.ReconnectBaseDelay.set -> void
+Redis.Client.RedisClientOptions.ReconnectMaxDelay.get -> System.TimeSpan
+Redis.Client.RedisClientOptions.ReconnectMaxDelay.set -> void
+Redis.Client.RedisClientOptions.RecordCommandArguments.get -> bool
+Redis.Client.RedisClientOptions.RecordCommandArguments.set -> void
+Redis.Client.RedisClientOptions.RedisClientOptions() -> void
+Redis.Client.RedisClientOptions.Ssl.get -> bool
+Redis.Client.RedisClientOptions.Ssl.set -> void
+Redis.Client.RedisClientOptions.SslOptions.get -> System.Net.Security.SslClientAuthenticationOptions?
+Redis.Client.RedisClientOptions.SslOptions.set -> void
+Redis.Client.RedisClientOptions.SubscriptionBufferSize.get -> int
+Redis.Client.RedisClientOptions.SubscriptionBufferSize.set -> void
+Redis.Client.RedisClientOptions.SubscriptionOverflowPolicy.get -> Redis.Client.SubscriptionOverflowPolicy
+Redis.Client.RedisClientOptions.SubscriptionOverflowPolicy.set -> void
+Redis.Client.RedisClientOptions.Username.get -> string?
+Redis.Client.RedisClientOptions.Username.set -> void
+Redis.Client.RedisClientOptionsValidator
+Redis.Client.RedisClientOptionsValidator.RedisClientOptionsValidator() -> void
+Redis.Client.RedisClientOptionsValidator.Validate(string? name, Redis.Client.RedisClientOptions! options) -> Microsoft.Extensions.Options.ValidateOptionsResult!
+Redis.Client.RedisConnectionException
+Redis.Client.RedisConnectionException.MayHaveExecuted.get -> bool
+Redis.Client.RedisConnectionException.RedisConnectionException() -> void
+Redis.Client.RedisConnectionException.RedisConnectionException(string! message) -> void
+Redis.Client.RedisConnectionException.RedisConnectionException(string! message, System.Exception? innerException) -> void
+Redis.Client.RedisConnectionException.RedisConnectionException(string! message, System.Exception? innerException, bool mayHaveExecuted) -> void
+Redis.Client.RedisCredentials
+Redis.Client.RedisCredentials.Password.get -> string!
+Redis.Client.RedisCredentials.RedisCredentials(string? username, string! password) -> void
+Redis.Client.RedisCredentials.Username.get -> string?
+Redis.Client.RedisException
+Redis.Client.RedisException.RedisException() -> void
+Redis.Client.RedisException.RedisException(string! message) -> void
+Redis.Client.RedisException.RedisException(string! message, System.Exception? innerException) -> void
+Redis.Client.RedisKey
+Redis.Client.RedisKey.Equals(Redis.Client.RedisKey other) -> bool
+Redis.Client.RedisKey.IsNull.get -> bool
+Redis.Client.RedisKey.RedisKey() -> void
+Redis.Client.RedisMessage
+Redis.Client.RedisMessage.Channel.get -> string!
+Redis.Client.RedisMessage.Channel.init -> void
+Redis.Client.RedisMessage.Deconstruct(out string! Channel, out Redis.Client.RedisValue Value, out string? Pattern) -> void
+Redis.Client.RedisMessage.Equals(Redis.Client.RedisMessage other) -> bool
+Redis.Client.RedisMessage.Pattern.get -> string?
+Redis.Client.RedisMessage.Pattern.init -> void
+Redis.Client.RedisMessage.RedisMessage() -> void
+Redis.Client.RedisMessage.RedisMessage(string! Channel, Redis.Client.RedisValue Value, string? Pattern) -> void
+Redis.Client.RedisMessage.Value.get -> Redis.Client.RedisValue
+Redis.Client.RedisMessage.Value.init -> void
+Redis.Client.RedisProtocol
+Redis.Client.RedisProtocol.Auto = 0 -> Redis.Client.RedisProtocol
+Redis.Client.RedisProtocol.Resp2 = 2 -> Redis.Client.RedisProtocol
+Redis.Client.RedisProtocol.Resp3 = 3 -> Redis.Client.RedisProtocol
+Redis.Client.RedisProtocolException
+Redis.Client.RedisProtocolException.RedisProtocolException() -> void
+Redis.Client.RedisProtocolException.RedisProtocolException(string! message) -> void
+Redis.Client.RedisProtocolException.RedisProtocolException(string! message, System.Exception? innerException) -> void
+Redis.Client.RedisResult
+Redis.Client.RedisResult.AsValue() -> Redis.Client.RedisValue
+Redis.Client.RedisResult.Attributes.get -> Redis.Client.RedisResult?
+Redis.Client.RedisResult.Count.get -> int
+Redis.Client.RedisResult.Elements.get -> System.Collections.Generic.IReadOnlyList<Redis.Client.RedisResult!>!
+Redis.Client.RedisResult.ErrorMessage.get -> string?
+Redis.Client.RedisResult.IsAggregate.get -> bool
+Redis.Client.RedisResult.IsNull.get -> bool
+Redis.Client.RedisResult.this[int index].get -> Redis.Client.RedisResult!
+Redis.Client.RedisResult.ToDictionary() -> System.Collections.Generic.IReadOnlyDictionary<string!, Redis.Client.RedisResult!>!
+Redis.Client.RedisResult.ToPairs() -> System.Collections.Generic.IReadOnlyList<System.Collections.Generic.KeyValuePair<Redis.Client.RedisResult!, Redis.Client.RedisResult!>>!
+Redis.Client.RedisResult.Type.get -> Redis.Client.RedisResultType
+Redis.Client.RedisResult.VerbatimFormat.get -> string?
+Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Array = 9 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.BigNumber = 7 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Boolean = 6 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.BulkString = 2 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Double = 5 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Error = 8 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Integer = 4 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Map = 11 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Null = 0 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Push = 12 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.Set = 10 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.SimpleString = 1 -> Redis.Client.RedisResultType
+Redis.Client.RedisResultType.VerbatimString = 3 -> Redis.Client.RedisResultType
+Redis.Client.RedisServerException
+Redis.Client.RedisServerException.ErrorCode.get -> string!
+Redis.Client.RedisServerException.RedisServerException() -> void
+Redis.Client.RedisServerException.RedisServerException(string! message) -> void
+Redis.Client.RedisServerException.RedisServerException(string! message, System.Exception? innerException) -> void
+Redis.Client.RedisTimeoutException
+Redis.Client.RedisTimeoutException.MayHaveExecuted.get -> bool
+Redis.Client.RedisTimeoutException.RedisTimeoutException() -> void
+Redis.Client.RedisTimeoutException.RedisTimeoutException(string! message) -> void
+Redis.Client.RedisTimeoutException.RedisTimeoutException(string! message, bool mayHaveExecuted) -> void
+Redis.Client.RedisTimeoutException.RedisTimeoutException(string! message, System.Exception? innerException) -> void
+Redis.Client.RedisType
+Redis.Client.RedisType.Hash = 5 -> Redis.Client.RedisType
+Redis.Client.RedisType.List = 2 -> Redis.Client.RedisType
+Redis.Client.RedisType.None = 0 -> Redis.Client.RedisType
+Redis.Client.RedisType.Set = 3 -> Redis.Client.RedisType
+Redis.Client.RedisType.SortedSet = 4 -> Redis.Client.RedisType
+Redis.Client.RedisType.Stream = 6 -> Redis.Client.RedisType
+Redis.Client.RedisType.String = 1 -> Redis.Client.RedisType
+Redis.Client.RedisType.Unknown = 7 -> Redis.Client.RedisType
+Redis.Client.RedisValue
+Redis.Client.RedisValue.Equals(Redis.Client.RedisValue other) -> bool
+Redis.Client.RedisValue.IsNull.get -> bool
+Redis.Client.RedisValue.IsNullOrEmpty.get -> bool
+Redis.Client.RedisValue.RedisValue() -> void
+Redis.Client.RedisValue.TryParse(out double result) -> bool
+Redis.Client.RedisValue.TryParse(out long result) -> bool
+Redis.Client.ScoreBound
+Redis.Client.ScoreBound.Equals(Redis.Client.ScoreBound other) -> bool
+Redis.Client.ScoreBound.IsExclusive.get -> bool
+Redis.Client.ScoreBound.ScoreBound() -> void
+Redis.Client.ScoreBound.Value.get -> double
+Redis.Client.SetOperation
+Redis.Client.SetOperation.Difference = 2 -> Redis.Client.SetOperation
+Redis.Client.SetOperation.Intersect = 1 -> Redis.Client.SetOperation
+Redis.Client.SetOperation.Union = 0 -> Redis.Client.SetOperation
+Redis.Client.SortedSetEntry
+Redis.Client.SortedSetEntry.Deconstruct(out Redis.Client.RedisValue Member, out double Score) -> void
+Redis.Client.SortedSetEntry.Equals(Redis.Client.SortedSetEntry other) -> bool
+Redis.Client.SortedSetEntry.Member.get -> Redis.Client.RedisValue
+Redis.Client.SortedSetEntry.Member.init -> void
+Redis.Client.SortedSetEntry.Score.get -> double
+Redis.Client.SortedSetEntry.Score.init -> void
+Redis.Client.SortedSetEntry.SortedSetEntry() -> void
+Redis.Client.SortedSetEntry.SortedSetEntry(Redis.Client.RedisValue Member, double Score) -> void
+Redis.Client.SortedSetWhen
+Redis.Client.SortedSetWhen.Always = 0 -> Redis.Client.SortedSetWhen
+Redis.Client.SortedSetWhen.Exists = 1 -> Redis.Client.SortedSetWhen
+Redis.Client.SortedSetWhen.GreaterThan = 4 -> Redis.Client.SortedSetWhen
+Redis.Client.SortedSetWhen.LessThan = 8 -> Redis.Client.SortedSetWhen
+Redis.Client.SortedSetWhen.NotExists = 2 -> Redis.Client.SortedSetWhen
+Redis.Client.SubscriptionOverflowPolicy
+Redis.Client.SubscriptionOverflowPolicy.DropOldest = 0 -> Redis.Client.SubscriptionOverflowPolicy
+Redis.Client.SubscriptionOverflowPolicy.Wait = 1 -> Redis.Client.SubscriptionOverflowPolicy
+Redis.Client.TimeToLive
+Redis.Client.TimeToLive.Equals(Redis.Client.TimeToLive other) -> bool
+Redis.Client.TimeToLive.Kind.get -> Redis.Client.TimeToLiveKind
+Redis.Client.TimeToLive.Remaining.get -> System.TimeSpan
+Redis.Client.TimeToLive.TimeToLive() -> void
+Redis.Client.TimeToLiveKind
+Redis.Client.TimeToLiveKind.Expires = 0 -> Redis.Client.TimeToLiveKind
+Redis.Client.TimeToLiveKind.KeyMissing = 2 -> Redis.Client.TimeToLiveKind
+Redis.Client.TimeToLiveKind.NoExpiry = 1 -> Redis.Client.TimeToLiveKind
+Redis.Client.When
+Redis.Client.When.Always = 0 -> Redis.Client.When
+Redis.Client.When.Exists = 2 -> Redis.Client.When
+Redis.Client.When.NotExists = 1 -> Redis.Client.When
+static Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions.AddKeyedRedisClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! key, Microsoft.Extensions.Configuration.IConfiguration! section, System.Action<Redis.Client.RedisClientOptions!>? configure = null) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions.AddKeyedRedisClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! key, string! connectionString, System.Action<Redis.Client.RedisClientOptions!>? configure = null) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions.AddKeyedRedisClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! key, System.Action<Redis.Client.RedisClientOptions!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions.AddRedisClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, Microsoft.Extensions.Configuration.IConfiguration! section, System.Action<Redis.Client.RedisClientOptions!>? configure = null) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions.AddRedisClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! connectionString, System.Action<Redis.Client.RedisClientOptions!>? configure = null) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Microsoft.Extensions.DependencyInjection.RedisServiceCollectionExtensions.AddRedisClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Redis.Client.RedisClientOptions!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Redis.Client.LexBound.Exclusive(Redis.Client.RedisValue value) -> Redis.Client.LexBound
+static Redis.Client.LexBound.Inclusive(Redis.Client.RedisValue value) -> Redis.Client.LexBound
+static Redis.Client.LexBound.Max.get -> Redis.Client.LexBound
+static Redis.Client.LexBound.Min.get -> Redis.Client.LexBound
+static Redis.Client.LexBound.operator !=(Redis.Client.LexBound left, Redis.Client.LexBound right) -> bool
+static Redis.Client.LexBound.operator ==(Redis.Client.LexBound left, Redis.Client.LexBound right) -> bool
+static Redis.Client.RedisClientOptions.FromConnectionString(string! connectionString) -> Redis.Client.RedisClientOptions!
+static Redis.Client.RedisKey.explicit operator byte[]?(Redis.Client.RedisKey key) -> byte[]?
+static Redis.Client.RedisKey.explicit operator string?(Redis.Client.RedisKey key) -> string?
+static Redis.Client.RedisKey.implicit operator Redis.Client.RedisKey(byte[]? value) -> Redis.Client.RedisKey
+static Redis.Client.RedisKey.implicit operator Redis.Client.RedisKey(string? value) -> Redis.Client.RedisKey
+static Redis.Client.RedisKey.implicit operator Redis.Client.RedisKey(System.ReadOnlyMemory<byte> value) -> Redis.Client.RedisKey
+static Redis.Client.RedisKey.implicit operator Redis.Client.RedisValue(Redis.Client.RedisKey key) -> Redis.Client.RedisValue
+static Redis.Client.RedisKey.operator !=(Redis.Client.RedisKey left, Redis.Client.RedisKey right) -> bool
+static Redis.Client.RedisKey.operator ==(Redis.Client.RedisKey left, Redis.Client.RedisKey right) -> bool
+static Redis.Client.RedisMessage.operator !=(Redis.Client.RedisMessage left, Redis.Client.RedisMessage right) -> bool
+static Redis.Client.RedisMessage.operator ==(Redis.Client.RedisMessage left, Redis.Client.RedisMessage right) -> bool
+static Redis.Client.RedisResult.explicit operator bool(Redis.Client.RedisResult! result) -> bool
+static Redis.Client.RedisResult.explicit operator byte[]?(Redis.Client.RedisResult! result) -> byte[]?
+static Redis.Client.RedisResult.explicit operator double(Redis.Client.RedisResult! result) -> double
+static Redis.Client.RedisResult.explicit operator double?(Redis.Client.RedisResult! result) -> double?
+static Redis.Client.RedisResult.explicit operator long(Redis.Client.RedisResult! result) -> long
+static Redis.Client.RedisResult.explicit operator long?(Redis.Client.RedisResult! result) -> long?
+static Redis.Client.RedisResult.explicit operator Redis.Client.RedisResult![]?(Redis.Client.RedisResult! result) -> Redis.Client.RedisResult![]?
+static Redis.Client.RedisResult.explicit operator Redis.Client.RedisValue(Redis.Client.RedisResult! result) -> Redis.Client.RedisValue
+static Redis.Client.RedisResult.explicit operator string?(Redis.Client.RedisResult! result) -> string?
+static Redis.Client.RedisValue.EmptyString.get -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.explicit operator byte[]?(Redis.Client.RedisValue value) -> byte[]?
+static Redis.Client.RedisValue.explicit operator double(Redis.Client.RedisValue value) -> double
+static Redis.Client.RedisValue.explicit operator double?(Redis.Client.RedisValue value) -> double?
+static Redis.Client.RedisValue.explicit operator int(Redis.Client.RedisValue value) -> int
+static Redis.Client.RedisValue.explicit operator long(Redis.Client.RedisValue value) -> long
+static Redis.Client.RedisValue.explicit operator long?(Redis.Client.RedisValue value) -> long?
+static Redis.Client.RedisValue.explicit operator string?(Redis.Client.RedisValue value) -> string?
+static Redis.Client.RedisValue.implicit operator Redis.Client.RedisValue(byte[]? value) -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.implicit operator Redis.Client.RedisValue(double value) -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.implicit operator Redis.Client.RedisValue(long value) -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.implicit operator Redis.Client.RedisValue(string? value) -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.implicit operator Redis.Client.RedisValue(System.ReadOnlyMemory<byte> value) -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.Null.get -> Redis.Client.RedisValue
+static Redis.Client.RedisValue.operator !=(Redis.Client.RedisValue left, Redis.Client.RedisValue right) -> bool
+static Redis.Client.RedisValue.operator ==(Redis.Client.RedisValue left, Redis.Client.RedisValue right) -> bool
+static Redis.Client.ScoreBound.Exclusive(double value) -> Redis.Client.ScoreBound
+static Redis.Client.ScoreBound.implicit operator Redis.Client.ScoreBound(double value) -> Redis.Client.ScoreBound
+static Redis.Client.ScoreBound.Inclusive(double value) -> Redis.Client.ScoreBound
+static Redis.Client.ScoreBound.NegativeInfinity.get -> Redis.Client.ScoreBound
+static Redis.Client.ScoreBound.operator !=(Redis.Client.ScoreBound left, Redis.Client.ScoreBound right) -> bool
+static Redis.Client.ScoreBound.operator ==(Redis.Client.ScoreBound left, Redis.Client.ScoreBound right) -> bool
+static Redis.Client.ScoreBound.PositiveInfinity.get -> Redis.Client.ScoreBound
+static Redis.Client.SortedSetEntry.operator !=(Redis.Client.SortedSetEntry left, Redis.Client.SortedSetEntry right) -> bool
+static Redis.Client.SortedSetEntry.operator ==(Redis.Client.SortedSetEntry left, Redis.Client.SortedSetEntry right) -> bool
+static Redis.Client.TimeToLive.Expires(System.TimeSpan remaining) -> Redis.Client.TimeToLive
+static Redis.Client.TimeToLive.KeyMissing.get -> Redis.Client.TimeToLive
+static Redis.Client.TimeToLive.NoExpiry.get -> Redis.Client.TimeToLive
+static Redis.Client.TimeToLive.operator !=(Redis.Client.TimeToLive left, Redis.Client.TimeToLive right) -> bool
+static Redis.Client.TimeToLive.operator ==(Redis.Client.TimeToLive left, Redis.Client.TimeToLive right) -> bool
+~override Redis.Client.RedisMessage.Equals(object obj) -> bool
+~override Redis.Client.RedisMessage.ToString() -> string
+~override Redis.Client.SortedSetEntry.Equals(object obj) -> bool
+~override Redis.Client.SortedSetEntry.ToString() -> string
+~override Redis.Client.TimeToLive.Equals(object obj) -> bool
